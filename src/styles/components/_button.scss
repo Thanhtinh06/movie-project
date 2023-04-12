@@ -1,0 +1,8 @@
+.btn-primary {
+  @apply py-2 px-4 bg-[--tw-color-primary] text-white rounded-lg shadow-md hover:bg-[--tw-color-hover-btn];
+}
+
+.btn-movie {
+  @apply py-2 px-4 bg-[--tw-color-btn-movie] text-[--tw-color-primary] rounded-lg shadow-md hover:bg-[--tw-color-hover-btn] hover:text-white
+  
+}

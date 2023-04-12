@@ -1,0 +1,13 @@
+header {
+  @apply flex flex-row p-3 justify-between align-middle bg-[--tw-color-bg-black] fixed w-[100%] font-nunito z-[100];
+  .logo {
+    @apply max-w-[100px];
+  }
+  .navbar, .group-btn {
+    @apply flex flex-row gap-4 text-center justify-between align-middle items-center;	
+    
+    .navlink-primary {
+      @apply py-2 px-4 text-white text-center align-baseline hover:text-[--tw-color-primary];
+    }
+  }
+}

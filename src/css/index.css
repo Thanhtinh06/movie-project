@@ -1,0 +1,73 @@
+:root {
+  --tw-color-primary: #d34b56d8;
+  --tw-color-hover-btn: #7c2a3296;
+  --tw-color-icon: #c0bcbc;
+  --tw-color-text-footer: #777777;
+  --tw-color-bg-black: #131313fa;
+  --tw-color-btn-movie: #e1e1e18f;
+}
+
+.btn-primary {
+  @apply py-2 px-4 bg-[--tw-color-primary] text-white rounded-lg shadow-md hover:bg-[--tw-color-hover-btn];
+}
+
+.btn-movie {
+  @apply py-2 px-4 bg-[--tw-color-btn-movie] text-[--tw-color-primary] rounded-lg shadow-md hover:bg-[--tw-color-hover-btn] hover:text-white;
+}
+
+header {
+  @apply flex flex-row p-3 justify-between align-middle bg-[--tw-color-bg-black] fixed w-[100%] font-nunito z-[100];
+}
+header .logo {
+  @apply max-w-[100px];
+}
+header .navbar, header .group-btn {
+  @apply flex flex-row gap-4 text-center justify-between align-middle items-center;
+}
+header .navbar .navlink-primary, header .group-btn .navlink-primary {
+  @apply py-2 px-4 text-white text-center align-baseline hover:text-[--tw-color-primary];
+}
+
+footer {
+  @apply bg-black p-5 font-nunito bg-[--tw-color-bg-black] gap-3;
+}
+footer .container-footer {
+  @apply max-w-[60%] m-auto text-white;
+}
+footer .footer-content {
+  @apply grid grid-cols-5;
+}
+footer .footer-content ul {
+  @apply flex flex-col justify-center;
+}
+footer .footer-content ul li {
+  @apply text-[13px] text-[--tw-color-text-footer] hover:cursor-pointer hover:underline underline-offset-0;
+}
+footer .footer-content .mobile-app, footer .footer-content .social {
+  @apply flex flex-col items-center gap-3;
+}
+footer .footer-content .icon {
+  @apply flex gap-5 items-center;
+}
+footer .footer-content .icon i {
+  @apply text-[--tw-color-icon] text-[20px];
+}
+footer .footer-content .text-footer {
+  @apply text-[13px] text-slate-50;
+}
+
+.theater {
+  @apply w-[80%] m-auto py-12;
+}
+.theater .theater-content {
+  @apply grid grid-cols-9 border-solid border-[1px] border-neutral-300 py-10;
+}
+.theater .theater-content .theater-logo {
+  @apply col-span-1 text-center;
+}
+.theater .theater-content .theater-group {
+  @apply col-span-3;
+}
+.theater .theater-content .movie-schedule-theater {
+  @apply col-span-5 text-center;
+}/*# sourceMappingURL=index.css.map */
