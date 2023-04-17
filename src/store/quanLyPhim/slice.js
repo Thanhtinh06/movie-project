@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getMovieList } from './thunkAction';
+import { getMovieList} from './thunkAction';
 
 const initialState = {
-  movieList : []
+  movieList : [],
+  updateList : [],
 }
 
 export const { 
@@ -11,13 +12,23 @@ export const {
 } = createSlice({
   name: 'quanLyPhim',
   initialState,
-  reducer : {},
+  reducers: {
+    updateMovieList : (state, action) => {
+        state.updateList = action.payload
+    },
+  },
   extraReducers : (builder) => {
     builder
       .addCase(
         getMovieList.fulfilled,(state,action) => {
           state.movieList = action.payload
+          state.updateList = action.payload
         }
       )
+      // .addCase (
+      //   getMovieById.fulfilled, (state,action) => {
+      //     state.
+      //   }
+      // )
   }
 })

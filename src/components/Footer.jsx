@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         <hr className="my-6" />
         <div className="flex flex-row justify-between">
-          <img src="../logo2.jpeg" alt="" className="w-[70px] h-[70px]" />
+          <img src="../logo2.jpeg" alt="..." className="w-[70px] h-[70px]" />
           <p className="text-[13px] ">
             Movie - SẢN PHẨM CỦA CÔNG TY CỔ PHẦN SUNEL <br />
             Địa chỉ: Z06 Đường số 13, Phường Tân Thuận Đông, Quận 7, Tp. Hồ Chí
@@ -56,7 +56,7 @@ const Footer = () => {
             Số Điện Thoại (Hotline): 1900 545 436 <br />
             Email: support@movie.vn
           </p>
-          <img src="../certificate.png" alt="" className="w-[100px] h-[50px]" />
+          <img src="../certificate.png" alt="..." className="w-[100px] h-[50px]" />
         </div>
       </div>
     </footer>

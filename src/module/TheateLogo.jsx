@@ -7,7 +7,7 @@ import {
 
 const TheateLogo = (props) => {
   const dispatch = useDispatch();
-  const { theateList, setTheateList } = useSelector((state) => state.quanLyRap);
+  const { theateList } = useSelector((state) => state.quanLyRap);
   useEffect(() => {
     dispatch(getTheaterList());
   }, [dispatch]);

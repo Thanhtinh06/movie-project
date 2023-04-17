@@ -8,7 +8,7 @@ export const quanLyRapServices = {
   getTheaterGroup : (query = '') => {
     return http.get(`/QuanLyRap/LayThongTinLichChieuHeThongRap?${query}`)
   },
-  getMovieSchedule : (query = '') => {
-    return http.get(`/QuanLyRap/LayThongTinLichChieuHeThongRap?${query}`)
+  getMovieSchedule : (id) => {
+    return http.get(`QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${id}`)
   }
 }

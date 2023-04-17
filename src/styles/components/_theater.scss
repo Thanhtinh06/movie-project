@@ -1,15 +1,15 @@
 .theater {
-  @apply w-[80%] m-auto py-12;
+  @apply w-[80%] m-auto py-12 bg-white rounded-lg;
   .theater-content {
-    @apply grid grid-cols-9 border-solid border-[1px] border-neutral-300 py-10;
+    @apply grid grid-cols-9 border-solid border-[1px] border-neutral-300 py-10 w-[90%] m-auto;
     .theater-logo {
-      @apply col-span-1 text-center;
+      @apply col-span-1 text-center p-5;
     }
     .theater-group {
-      @apply col-span-3;
+      @apply col-span-3 p-5;
     }
     .movie-schedule-theater {
-      @apply col-span-5 text-center;
+      @apply col-span-5 text-center p-5;
     }
   }
 }

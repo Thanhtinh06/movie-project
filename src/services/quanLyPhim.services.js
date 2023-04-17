@@ -4,4 +4,7 @@ export const quanLyPhimServices = {
   getMovieList : (query='') => {
     return http.get(`QuanLyPhim/LayDanhSachPhim${query}`)
   },
+  getMovieById : (id) => {
+    return http.get(`QuanLyPhim/LayThongTinPhim?MaPhim=${id}`)
+  }
 } 

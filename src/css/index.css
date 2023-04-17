@@ -1,6 +1,6 @@
 :root {
-  --tw-color-primary: #d34b56d8;
-  --tw-color-hover-btn: #7c2a3296;
+  --tw-color-primary: #940d0dc3;
+  --tw-color-hover-btn: #fe6f7beb;
   --tw-color-icon: #c0bcbc;
   --tw-color-text-footer: #777777;
   --tw-color-bg-black: #131313fa;
@@ -12,7 +12,11 @@
 }
 
 .btn-movie {
-  @apply py-2 px-4 bg-[--tw-color-btn-movie] text-[--tw-color-primary] rounded-lg shadow-md hover:bg-[--tw-color-hover-btn] hover:text-white;
+  @apply py-2 px-4 bg-[--tw-color-btn-movie] text-[--tw-color-primary] rounded-lg shadow-md hover:bg-[--tw-color-hover-btn] hover:text-white border;
+}
+
+.btn-schedule {
+  @apply font-medium text-xl border border-slate-100 px-2 py-1 rounded-md bg-slate-50 shadow-sm cursor-pointer hover:bg-[--tw-color-primary] hover:text-gray-100;
 }
 
 header {
@@ -57,17 +61,17 @@ footer .footer-content .text-footer {
 }
 
 .theater {
-  @apply w-[80%] m-auto py-12;
+  @apply w-[80%] m-auto py-12 bg-white rounded-lg;
 }
 .theater .theater-content {
-  @apply grid grid-cols-9 border-solid border-[1px] border-neutral-300 py-10;
+  @apply grid grid-cols-9 border-solid border-[1px] border-neutral-300 py-10 w-[90%] m-auto;
 }
 .theater .theater-content .theater-logo {
-  @apply col-span-1 text-center;
+  @apply col-span-1 text-center p-5;
 }
 .theater .theater-content .theater-group {
-  @apply col-span-3;
+  @apply col-span-3 p-5;
 }
 .theater .theater-content .movie-schedule-theater {
-  @apply col-span-5 text-center;
+  @apply col-span-5 text-center p-5;
 }/*# sourceMappingURL=index.css.map */

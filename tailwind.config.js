@@ -8,6 +8,9 @@ module.exports = {
     fontFamily : {
       nunito : ['Nunito Sans', 'sans-serif'],
       sans : ['Source Sans Pro', 'sans-serif'],
+    },
+    backgroundImage: {
+      'movie-detail-bg': "url('/src/assets/images/movie-bg.png')",
     }
   },
   plugins: [],
