@@ -12,14 +12,3 @@ export const getMovieList = createAsyncThunk(
     }
   }
 );
-
-// export const getMovieById = createAsyncThunk ("quanLyPhim/getMovieById",
-//   async (payload, {rejectWithValue}) => {
-//     try {
-//       const res = await quanLyPhimServices.getMovieById();
-//       return res.data.content
-//     } catch (error) {
-//       rejectWithValue(error)
-//     }
-//   }
-// )

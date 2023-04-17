@@ -10,7 +10,7 @@ const TheaterGroup = () => {
     dispatch(getTheaterGroup());
   }, [dispatch]);
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 h-[500px] overflow-auto">
       {theateGroup?.map((item, index) => {
         return (
           <div
