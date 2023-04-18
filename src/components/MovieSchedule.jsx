@@ -34,7 +34,7 @@ const MovieSchedule = () => {
                 const date = new Date(schedule.ngayChieuGioChieu);
                 return (
                   <div key={index}>
-                    <button
+                    <NavLink to={`/buyTicket/${schedule.maLichChieu}`}
                       className={
                         movie.dangChieu
                           ? "text-green-600 btn-schedule"
@@ -45,7 +45,7 @@ const MovieSchedule = () => {
                         hour: "2-digit",
                         minute: "2-digit",
                       })}
-                    </button>
+                    </NavLink>
                   </div>
                 );
               })}

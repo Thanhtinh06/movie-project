@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import MainLayout from "../layouts/MainLayout";
 import News from "../pages/News";
+import BuyTicket from "../pages/BuyTicket";
 
 const Router = ()=>{
   const elements = useRoutes([
@@ -29,6 +30,11 @@ const Router = ()=>{
         path : "/news",
         element : <News />
       },
+            {
+        path : '/buyTicket/:ticketId',
+        element : <BuyTicket />
+      },
+      
     ]
     },
     {

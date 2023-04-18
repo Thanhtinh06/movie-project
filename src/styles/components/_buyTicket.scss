@@ -1,0 +1,18 @@
+.main {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-image: url('../assets/images/bg-movie.jpeg');
+  width: 90%;
+  background-position: bottom center;
+  margin: 150px auto;
+  .seat-main  {
+    background: $color-background;
+    filter: blur(5%);
+    width: 60%;
+    padding: $pd-3 $pd-2;
+  }
+  .order {
+    @extend .seat-main;
+    width: 40%;
+  }
+  
+}

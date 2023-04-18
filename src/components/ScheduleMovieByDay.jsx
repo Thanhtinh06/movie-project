@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { quanLyRapServices } from "../services/quanLyRap.services";
 import moment from "moment";
 
@@ -126,11 +126,11 @@ const ScheduleMovieByDay = () => {
                   <div className="schedule flex flex-wrap flex-row gap-4">
                     {item?.lichChieuPhim.map((schedule, index) => {
                       return (
-                        <button className="btn-movie" key={index}>
+                        <NavLink to={`/buyTicket/${schedule.maLichChieu}`} className="btn-movie" key={index}>
                           {moment(schedule?.ngayChieuGioChieu).format(
                             "HH : MM A"
                           )}
-                        </button>
+                        </NavLink>
                       );
                     })}
                   </div>

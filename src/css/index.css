@@ -5,6 +5,7 @@
   --tw-color-text-footer: #777777;
   --tw-color-bg-black: #131313fa;
   --tw-color-btn-movie: #e1e1e18f;
+  --color-text-gray: rgba(163, 154, 154, 0.882) ;
 }
 
 .btn-primary {
@@ -74,4 +75,142 @@ footer .footer-content .text-footer {
 }
 .theater .theater-content .movie-schedule-theater {
   @apply col-span-5 text-center p-5;
+}
+
+.seat {
+  width: 35px;
+  height: 25px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  border: 2px solid rgba(151, 70, 70, 0.7647058824);
+  text-align: center;
+  align-self: center;
+  color: var(--color-text-gray);
+  background-color: white;
+}
+.seat:focus {
+  background-color: white;
+}
+.seat.checked {
+  background-color: green;
+}
+.seat.reserved {
+  background-color: red;
+}
+.seat.vip {
+  background-color: var(--tw-color-primary);
+}
+
+.list-seat {
+  margin-top: 1rem;
+}
+.list-seat .intro {
+  list-style: none;
+  display: flex;
+}
+.list-seat .intro li {
+  margin-right: 2rem;
+  color: var(--color-text-gray);
+  padding: 0 1rem;
+}
+.list-seat .intro li.smallBox::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+.list-seat .intro li.greenBox::before {
+  background-color: green;
+}
+.list-seat .intro li.redBox::before {
+  background-color: red;
+}
+.list-seat .intro li.whiteBox::before {
+  background-color: white;
+  border: 1.5px solid rgba(148, 13, 13, 0.7647058824);
+}
+.list-seat .intro li.vipBox::before {
+  background-color: rgba(148, 13, 13, 0.7647058824);
+  border: 1.5px solid rgba(148, 13, 13, 0.7647058824);
+}
+.list-seat .choose-seat {
+  color: white;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.list-seat .choose-seat .start-choose {
+  background-color: rgba(148, 13, 13, 0.7647058824);
+  text-align: center;
+}
+.list-seat .choose-seat thead,
+.list-seat .choose-seat tbody {
+  width: 100%;
+}
+.list-seat .choose-seat thead tr,
+.list-seat .choose-seat tbody tr {
+  display: flex;
+  justify-content: space-evenly;
+}
+.list-seat .choose-seat thead tr td,
+.list-seat .choose-seat tbody tr td {
+  width: 20px;
+}
+.list-seat .choose-seat thead tr th,
+.list-seat .choose-seat tbody tr th {
+  width: 35px;
+  padding-left: 15px;
+  text-align: center;
+}
+.list-seat .choose-seat .row-seat {
+  display: flex;
+  justify-content: space-evenly;
+}
+.list-seat .btn-confirm {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-seat .btn-confirm .btn-main {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 1rem;
+  font-weight: 500;
+  color: white;
+  background-color: var(--tw-color-primary);
+}
+.list-seat .btn-confirm .btn-main:hover {
+  background-color: var(--tw-color-hover-btn);
+}
+.list-seat .screen {
+  background-color: rgba(148, 13, 13, 0.7647058824);
+  padding: 1rem 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.list-seat .screen p {
+  letter-spacing: 3px;
+  font-size: 20px;
+  margin: 0;
+}
+
+.main {
+  font-family: "Source Sans Pro", sans-serif;
+  background-image: url("../assets/images/bg-movie.jpeg");
+  width: 90%;
+  background-position: bottom center;
+  margin: 150px auto;
+}
+.main .seat-main, .main .order {
+  background: rgba(128, 128, 128, 0.34);
+  filter: blur(5%);
+  width: 60%;
+  padding: 3.125rem 2.5rem;
+}
+.main .order {
+  width: 40%;
 }/*# sourceMappingURL=index.css.map */
