@@ -222,4 +222,8 @@ footer .footer-content .text-footer {
 }
 .form-order table tbody .row-table th, .form-order table tbody .row-table td {
   @apply px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-transparent;
+}
+
+.lable-style {
+  @apply block mb-2 text-sm font-bold text-gray-700;
 }/*# sourceMappingURL=index.css.map */
