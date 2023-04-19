@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React from 'react'
 
 const Seat = (props) => {
@@ -6,8 +7,11 @@ const Seat = (props) => {
     <input
       type="button"
       value={value.stt}
-      className='seat'
-      disabled ={value.daDat}
+      className={clsx('seat',{
+        reserved : value.daDat,
+        vip : value.loaiGhe === 'Vip' ? true : false,
+      })}
+      disabled={value.daDat}
     />
   );
 }
