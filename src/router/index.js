@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import MainLayout from "../layouts/MainLayout";
 import News from "../pages/News";
 import BuyTicket from "../pages/BuyTicket";
+import User from "../pages/User";
 
 const Router = ()=>{
   const elements = useRoutes([
@@ -48,6 +49,10 @@ const Router = ()=>{
     {
       path : '*',
       element : <NotFound />
+    },
+    {
+      path : '/user',
+      element : <User />
     },
   ])
   return elements
