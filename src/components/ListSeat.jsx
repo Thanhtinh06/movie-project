@@ -4,19 +4,18 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getListBoxTicket } from "../store/quanLyDatVe/thunkActions";
 import Seat from "./Seat";
-import moment from "moment";
 
 const ListSeat = () => {
   const dispatch = useDispatch();
   const params = useParams();
-  const { dataSeat } = useSelector((state) => state.quanLyDatVe);
-  console.log(dataSeat);
+  const {listSeat,inforMoive} = useSelector((state) => state.quanLyDatVe);
+
   useEffect(() => {
     dispatch(getListBoxTicket({ id: params.ticketId }));
   },[dispatch,params.ticketId]);
 
   const renderListSeat = () => {
-    return dataSeat?.danhSachGhe?.map((seat, index) => {
+    return listSeat?.map((seat, index) => {
       return (
         <div key={index} className="mt-5 flex justify-evenly">
           <Seat value={seat} />
@@ -29,16 +28,16 @@ const ListSeat = () => {
       <div className="container">
         <div className="infor-moive my-5 flex flex-row gap-5">
           <img
-            src={dataSeat?.thongTinPhim?.hinhAnh}
+            src={inforMoive?.hinhAnh}
             alt=""
             className="w-[80px] rounded-md"
           />
           <div>
             <p className="text-lime-300 font-semibold">
-              {dataSeat?.thongTinPhim?.ngayChieu} - <span> {dataSeat?.thongTinPhim?.gioChieu}</span>
+              {inforMoive?.ngayChieu} - <span> {inforMoive?.gioChieu}</span>
             </p>
             <p className="text-gray-300 font-semibold">
-              {dataSeat?.thongTinPhim?.tenRap} - <span className=" text-neutral-400 font-normal">{dataSeat?.thongTinPhim?.tenCumRap}</span> 
+              {inforMoive?.tenRap} - <span className=" text-neutral-400 font-normal">{inforMoive?.tenCumRap}</span> 
             </p>
           </div>
         </div>
@@ -53,7 +52,7 @@ const ListSeat = () => {
         <div className="choose-seat">
           <p className="screen">SCREEN THIS WAY</p>
           <div>
-            <div className="grid grid-cols-10 justify-center">{renderListSeat()}</div>
+            <div className="renderListSeat justify-center">{renderListSeat()}</div>
           </div>
         </div>
         <div className="btn-confirm">

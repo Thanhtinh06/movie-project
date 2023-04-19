@@ -5,6 +5,7 @@ import { getListBoxTicket } from "./thunkActions";
 const initialState = {
   dataSeat : [],
   listSeat : [],
+  inforMoive : undefined
 }
 
 export const { reducer: quanLyDatVeReducer, actions:quanLyDatVeActions } = createSlice({
@@ -15,8 +16,8 @@ export const { reducer: quanLyDatVeReducer, actions:quanLyDatVeActions } = creat
     builder
       .addCase(getListBoxTicket.fulfilled,(state,action)=>{
         state.dataSeat = action.payload;
-        state.listSeat = action.payload.danhSachGhe
-        console.log(state.dataSeat)
+        state.listSeat = action.payload.danhSachGhe;
+        state.inforMoive = action.payload.thongTinPhim;
       })
   }
 })

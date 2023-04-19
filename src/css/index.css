@@ -6,6 +6,8 @@
   --tw-color-bg-black: #131313fa;
   --tw-color-btn-movie: #e1e1e18f;
   --color-text-gray: rgba(163, 154, 154, 0.882) ;
+  --color-btn-booking: rgba(128, 225, 99, 0.793);
+  --color-orange-black: rgba(208, 136, 3, 0.793);
 }
 
 .btn-primary {
@@ -18,6 +20,10 @@
 
 .btn-schedule {
   @apply font-medium text-xl border border-slate-100 px-2 py-1 rounded-md bg-slate-50 shadow-sm cursor-pointer hover:bg-[--tw-color-primary] hover:text-gray-100;
+}
+
+.btn-booking {
+  @apply bg-[--color-btn-booking] py-2 px-4 text-white font-semibold rounded-lg shadow-md hover:bg-[--tw-color-hover-btn];
 }
 
 header {
@@ -82,11 +88,12 @@ footer .footer-content .text-footer {
   height: 25px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
-  border: 2px solid rgba(151, 70, 70, 0.7647058824);
+  border: 2px solid rgba(208, 136, 3, 0.793);
   text-align: center;
   align-self: center;
   color: var(--color-text-gray);
   background-color: white;
+  cursor: pointer;
 }
 .seat:focus {
   background-color: white;
@@ -97,8 +104,14 @@ footer .footer-content .text-footer {
 .seat.reserved {
   background-color: red;
 }
+.seat.reserved:hover {
+  background-color: red;
+}
 .seat.vip {
-  background-color: var(--tw-color-primary);
+  background-color: rgba(208, 136, 3, 0.793);
+}
+.seat:hover {
+  background-color: green;
 }
 
 .list-seat {
@@ -127,11 +140,11 @@ footer .footer-content .text-footer {
 }
 .list-seat .intro li.whiteBox::before {
   background-color: white;
-  border: 1.5px solid rgba(148, 13, 13, 0.7647058824);
+  border: 1.5px solid rgba(208, 136, 3, 0.793);
 }
 .list-seat .intro li.vipBox::before {
-  background-color: rgba(148, 13, 13, 0.7647058824);
-  border: 1.5px solid rgba(148, 13, 13, 0.7647058824);
+  background-color: rgba(208, 136, 3, 0.793);
+  border: 1.5px solid rgba(208, 136, 3, 0.793);
 }
 .list-seat .choose-seat {
   color: white;
@@ -141,32 +154,9 @@ footer .footer-content .text-footer {
   flex-wrap: wrap;
   gap: 15px;
 }
-.list-seat .choose-seat .start-choose {
-  background-color: rgba(148, 13, 13, 0.7647058824);
-  text-align: center;
-}
-.list-seat .choose-seat thead,
-.list-seat .choose-seat tbody {
-  width: 100%;
-}
-.list-seat .choose-seat thead tr,
-.list-seat .choose-seat tbody tr {
-  display: flex;
-  justify-content: space-evenly;
-}
-.list-seat .choose-seat thead tr td,
-.list-seat .choose-seat tbody tr td {
-  width: 20px;
-}
-.list-seat .choose-seat thead tr th,
-.list-seat .choose-seat tbody tr th {
-  width: 35px;
-  padding-left: 15px;
-  text-align: center;
-}
-.list-seat .choose-seat .row-seat {
-  display: flex;
-  justify-content: space-evenly;
+.list-seat .choose-seat .renderListSeat {
+  display: grid;
+  grid-template-columns: repeat(16, minmax(0, 1fr));
 }
 .list-seat .btn-confirm {
   margin-top: 2rem;
@@ -208,9 +198,28 @@ footer .footer-content .text-footer {
 .main .seat-main, .main .order {
   background: rgba(128, 128, 128, 0.34);
   filter: blur(5%);
-  width: 60%;
+  width: 65%;
   padding: 3.125rem 2.5rem;
 }
 .main .order {
-  width: 40%;
+  width: 35%;
+}
+
+.form-order {
+  @apply relative overflow-x-auto shadow-2xl sm:rounded-lg shadow-zinc-950;
+}
+.form-order table {
+  @apply w-full text-sm text-left text-gray-500 dark:text-gray-400;
+}
+.form-order table thead {
+  @apply text-base text-gray-700 uppercase dark:text-gray-400 text-center;
+}
+.form-order table thead .header-table {
+  @apply px-6 py-3 bg-gray-50 dark:bg-transparent;
+}
+.form-order table tbody .row-table {
+  @apply border-b border-gray-200 dark:border-gray-700 border-dotted;
+}
+.form-order table tbody .row-table th, .form-order table tbody .row-table td {
+  @apply px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-transparent;
 }/*# sourceMappingURL=index.css.map */

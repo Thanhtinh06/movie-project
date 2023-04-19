@@ -7,12 +7,12 @@
   .seat-main  {
     background: $color-background;
     filter: blur(5%);
-    width: 60%;
+    width: 65%;
     padding: $pd-3 $pd-2;
   }
   .order {
     @extend .seat-main;
-    width: 40%;
+    width: 35%;
   }
   
 }
