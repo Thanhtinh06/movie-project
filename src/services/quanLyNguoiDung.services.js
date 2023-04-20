@@ -6,5 +6,8 @@ export const quanLyNguoiDungServices = {
   },
   loginUser : (payload) => {
     return http.post('QuanLyNguoiDung/DangNhap',payload)
+  },
+  getInforUser : () =>{
+    return http.get('QuanLyNguoiDung/ThongTinTaiKhoan')
   }
 }

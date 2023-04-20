@@ -13,16 +13,28 @@ const ListSeat = () => {
   useEffect(() => {
     dispatch(getListBoxTicket({ id: params.ticketId }));
   },[dispatch,params.ticketId]);
+  
 
   const renderListSeat = () => {
     return listSeat?.map((seat, index) => {
       return (
-        <div key={index} className="mt-5 flex justify-evenly">
+        <div key={index} className="mt-5 flex justify-evenly text-sm">
           <Seat value={seat} />
         </div>
       );
     });
   };
+
+  const renderRow = () =>{
+    let countArray = Array.from({length: (listSeat.length/16|0)}, (_, i) => i + 1);
+    return countArray?.map(index => {
+      return (
+        <div key={index} className="mt-5">
+          <p className=" text-sm text-zinc-400 border border-gray-500 px-3 rounded-md shadow-slate-900 shadow-lg">{String.fromCharCode(index+64)}</p>
+        </div>
+      )
+    })
+  }
   return (
     <section className="list-seat">
       <div className="container">
@@ -51,14 +63,12 @@ const ListSeat = () => {
         </div>
         <div className="choose-seat">
           <p className="screen">SCREEN THIS WAY</p>
-          <div>
-            <div className="renderListSeat justify-center">{renderListSeat()}</div>
+          <div className="flex flex-row gap-2">
+            <div className="w-[5%] flex flex-col items-center justify-evenly">
+              {renderRow()}
+            </div>
+            <div className="renderListSeat justify-center w-[95%]">{renderListSeat()}</div>
           </div>
-        </div>
-        <div className="btn-confirm">
-            <button className="btn-main">
-              Confirm Selection
-            </button>
         </div>
       </div>
     </section>

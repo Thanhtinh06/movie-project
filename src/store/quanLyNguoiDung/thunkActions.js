@@ -12,3 +12,14 @@ export const loginUser = createAsyncThunk('quanLyNguoiDung/loginUser',
     }
   }
 )
+
+export const getInforUser = createAsyncThunk('quanLyNguoiDung/getInforUser',
+  async (payload,{rejectWithValue}) => {
+    try {
+      const res = await quanLyNguoiDungServices.getInforUser()
+      return res.data.content
+    } catch (error) {
+      rejectWithValue(error)
+    }
+  }
+)

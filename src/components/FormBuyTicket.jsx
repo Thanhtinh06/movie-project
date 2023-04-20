@@ -1,9 +1,37 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  bookTicket,
+} from "../store/quanLyDatVe/thunkActions";
+
 
 const FormBuyTicket = () => {
   const { inforMoive } = useSelector((state) => state.quanLyDatVe);
-  const { user } = useSelector(state => state.quanLyNguoiDung)
+  const { user } = useSelector((state) => state.quanLyNguoiDung);
+  const { chooseSeat } = useSelector((state) => state.quanLyDatVe);
+  const dispatch = useDispatch();
+  console.log(chooseSeat);
+
+  const getTotal = () => {
+    return chooseSeat?.reduce((total, item) => {
+      total += parseFloat(item.value.giaVe);
+      return total;
+    }, 0);
+  };
+
+  const getListVe = () => {
+    return {
+      maLichChieu: inforMoive?.maLichChieu,
+      danhSachVe: (() => {
+        return chooseSeat?.map((item) => {
+          return {
+            maGhe: item?.value.maGhe,
+            giave: item?.value.giaVe,
+          };
+        });
+      })(),
+    };
+  };
+
   return (
     <div className="form-order">
       <table>
@@ -42,19 +70,38 @@ const FormBuyTicket = () => {
           </tr>
           <tr className="row-table">
             <th scope="row">Seats</th>
-            <td className="px-6 py-4 text-right">Gray</td>
+            <td className="px-6 py-4 text-right flex flex-col">
+              {chooseSeat?.map((item) => {
+                return (
+                  <p key={item?.nameSeat} className="flex justify-end gap-2">
+                    <span className="text-[--color-orange-black] font-semibold">
+                      {" "}
+                      {item?.nameSeat}
+                    </span>{" "}
+                    - <span>{item?.value.giaVe}</span>
+                  </p>
+                );
+              })}
+            </td>
           </tr>
-          <tr className="row-table">
+          {/* <tr className="row-table">
             <th scope="row">Promotions</th>
             <td className="px-6 py-4 text-right">0</td>
-          </tr>
+          </tr> */}
           <tr className="row-table">
             <th scope="row">Total</th>
-            <td className="px-6 py-4 text-right">Red</td>
+            <td className="px-6 py-4 text-right">
+              <span className="font-bold text-emerald-500">{getTotal()}</span>
+            </td>
           </tr>
           <tr className="row-table">
             <th scope="row" colSpan="2" className="text-center">
-                <button className="btn-booking">BOOKING TICKET</button>
+              <button className="btn-booking" onClick={()=>{
+                 const value = getListVe();
+                 dispatch(bookTicket(value));
+              }}>
+                BOOKING TICKET
+              </button>
             </th>
           </tr>
         </tbody>

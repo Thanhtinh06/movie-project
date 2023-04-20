@@ -110,6 +110,15 @@ footer .footer-content .text-footer {
 .seat.vip {
   background-color: rgba(208, 136, 3, 0.793);
 }
+.seat.vip.checked {
+  background-color: green;
+}
+.seat.vip.reserved {
+  background-color: red;
+}
+.seat.vip.reserved:hover {
+  background-color: red;
+}
 .seat:hover {
   background-color: green;
 }
