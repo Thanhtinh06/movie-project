@@ -16,3 +16,14 @@ export const getListBoxTicket = createAsyncThunk(
 
   }
 )
+
+export const bookTicket = createAsyncThunk("quanLyDatVe/bookTicket",
+  async(payload,{rejectWithValue})=>{
+    try {
+      const res = await quanLyDatVeServices.bookTicket(payload)
+      return res.data.content
+    } catch (error) {
+      rejectWithValue(error)
+    }
+  }
+)

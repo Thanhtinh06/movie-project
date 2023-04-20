@@ -11,6 +11,7 @@ http.interceptors.request.use((config) => {
     ...config,
     headers: {
       TokenCyberSoft,
+      Authorization : `Bearer ${JSON.parse(localStorage.getItem('user') || '')?.accessToken}`
     },
     baseURL,
   };
@@ -27,6 +28,9 @@ http.interceptors.response.use((response) => {
       message.error(error.response.data.content)
     }
     if(error?.response?.status === 404){
+      message.error(error.response.data.content)
+    }
+    if(error?.response?.status === 401){
       message.error(error.response.data.content)
     }
   }

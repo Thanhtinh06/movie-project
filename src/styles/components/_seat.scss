@@ -23,6 +23,15 @@
   }
   &.vip {
     background-color: $color-vip;
+    &.checked {
+      background-color: green;
+    }
+    &.reserved {
+      background-color: red;
+      &:hover{
+        background-color: red;
+      }
+    }
   }
   &:hover{
     background-color: green;
