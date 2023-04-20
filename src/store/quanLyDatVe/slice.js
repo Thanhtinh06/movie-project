@@ -7,6 +7,7 @@ const initialState = {
   inforMoive: undefined,
   chooseSeat: [],
   listTicket: undefined,
+  reRender : false,
 };
 
 export const { reducer: quanLyDatVeReducer, actions: quanLyDatVeActions } =
@@ -33,8 +34,9 @@ export const { reducer: quanLyDatVeReducer, actions: quanLyDatVeActions } =
           state.inforMoive = action.payload.thongTinPhim;
         })
         .addCase(bookTicket.fulfilled, (state, action) => {
-          state.chooseSeat = undefined;
+          state.chooseSeat = [];
           state.listTicket = action.payload;
+          state.reRender = !state.reRender
         });
     },
   });

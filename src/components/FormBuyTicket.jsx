@@ -2,35 +2,46 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   bookTicket,
 } from "../store/quanLyDatVe/thunkActions";
+import { message } from "antd";
+import { useEffect } from "react";
 
 
 const FormBuyTicket = () => {
-  const { inforMoive } = useSelector((state) => state.quanLyDatVe);
+  const { inforMoive,reRender,chooseSeat } = useSelector((state) => state.quanLyDatVe);
   const { user } = useSelector((state) => state.quanLyNguoiDung);
-  const { chooseSeat } = useSelector((state) => state.quanLyDatVe);
   const dispatch = useDispatch();
   console.log(chooseSeat);
 
   const getTotal = () => {
-    return chooseSeat?.reduce((total, item) => {
-      total += parseFloat(item.value.giaVe);
-      return total;
-    }, 0);
+    if(chooseSeat){
+      return chooseSeat.reduce((total, item) => {
+        total += parseFloat(item.value.giaVe);
+        return total;
+      }, 0);
+    }
+    return 0
   };
 
   const getListVe = () => {
-    return {
-      maLichChieu: inforMoive?.maLichChieu,
-      danhSachVe: (() => {
-        return chooseSeat?.map((item) => {
-          return {
-            maGhe: item?.value.maGhe,
-            giave: item?.value.giaVe,
-          };
-        });
-      })(),
-    };
+    if(chooseSeat){
+      return {
+        maLichChieu: inforMoive?.maLichChieu,
+        danhSachVe: (() => {
+          return chooseSeat?.map((item) => {
+            return {
+              maGhe: item?.value.maGhe,
+              giave: item?.value.giaVe,
+            };
+          });
+        })(),
+      };
+    }
+    return undefined
   };
+
+  useEffect(()=>{
+
+  },[reRender])
 
   return (
     <div className="form-order">
@@ -97,8 +108,13 @@ const FormBuyTicket = () => {
           <tr className="row-table">
             <th scope="row" colSpan="2" className="text-center">
               <button className="btn-booking" onClick={()=>{
-                 const value = getListVe();
-                 dispatch(bookTicket(value));
+                 let value = getListVe();
+                 console.log('value getlistVe : ',value)
+                 if(value){
+                  dispatch(bookTicket(value));
+                 }else{
+                  message.warning('Please choose seats')
+                 }
               }}>
                 BOOKING TICKET
               </button>

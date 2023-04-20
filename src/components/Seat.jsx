@@ -29,7 +29,6 @@ const Seat = (props) => {
       disabled={value.daDat}
       onClick={() => {
         dispatch(quanLyDatVeActions.addSeat({value,nameSeat}));
-        console.log(nameSeat)
       }}
     />
   );

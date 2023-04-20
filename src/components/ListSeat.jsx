@@ -8,11 +8,11 @@ import Seat from "./Seat";
 const ListSeat = () => {
   const dispatch = useDispatch();
   const params = useParams();
-  const {listSeat,inforMoive} = useSelector((state) => state.quanLyDatVe);
+  const {listSeat,inforMoive,reRender} = useSelector((state) => state.quanLyDatVe);
 
   useEffect(() => {
     dispatch(getListBoxTicket({ id: params.ticketId }));
-  },[dispatch,params.ticketId]);
+  },[dispatch,params.ticketId,reRender]);
   
 
   const renderListSeat = () => {
