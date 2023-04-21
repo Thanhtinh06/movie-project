@@ -94,7 +94,6 @@ const Login = () => {
             </h1>
             <form method="post" className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto" onSubmit={handleSubmit((value,e)=>{
               dispatch(loginUser(value))
-              console.log(value,e)
             })}>
               <div className="pb-2 pt-4">
                 <input

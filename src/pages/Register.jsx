@@ -46,7 +46,6 @@ const Register = () => {
                     // message.error('Register account fail')
                     console.log(error)
                   }
-                  console.log(value,e);
                 })}
               >
                 <div className="mb-4 md:flex md:justify-between">

@@ -35,7 +35,10 @@ const Router = ()=>{
         path : '/buyTicket/:ticketId',
         element : <BuyTicket />
       },
-      
+      {
+        path : '/user',
+        element : <User />
+      }, 
     ]
     },
     {
@@ -50,10 +53,7 @@ const Router = ()=>{
       path : '*',
       element : <NotFound />
     },
-    {
-      path : '/user',
-      element : <User />
-    },
+
   ])
   return elements
 } 

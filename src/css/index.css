@@ -235,4 +235,8 @@ footer .footer-content .text-footer {
 
 .lable-style {
   @apply block mb-2 text-sm font-bold text-gray-700;
+}
+
+input.disabled {
+  @apply text-slate-200;
 }/*# sourceMappingURL=index.css.map */
