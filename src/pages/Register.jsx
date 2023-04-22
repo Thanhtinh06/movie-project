@@ -38,9 +38,10 @@ const Register = () => {
                 onSubmit={handleSubmit(async(value,e) => {
                   try {
                     const res = await quanLyNguoiDungServices.registerUser(value)
-                    if(res.data.statusCode !== 400){
-                      message.success('Register account successful')
-                      navigate('/login')
+                    console.log(res);
+                    if (res && res.data && res.data.statusCode !== 400) {
+                      message.success('Register account successful');
+                      navigate('/login');
                     }
                   } catch (error) {
                     // message.error('Register account fail')

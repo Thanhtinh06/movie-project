@@ -25,10 +25,5 @@ export const {
           state.updateList = action.payload
         }
       )
-      // .addCase (
-      //   getMovieById.fulfilled, (state,action) => {
-      //     state.
-      //   }
-      // )
   }
 })

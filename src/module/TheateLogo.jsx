@@ -10,7 +10,7 @@ const TheateLogo = (props) => {
   const { theateList } = useSelector((state) => state.quanLyRap);
   useEffect(() => {
     dispatch(getTheaterList());
-  }, [dispatch]);
+  },[dispatch]);
 
   return (
     <div className={props.valueClass}>

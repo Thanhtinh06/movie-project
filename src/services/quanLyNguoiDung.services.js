@@ -1,4 +1,4 @@
-import http from '../constant/api'
+import http, { httpAuthor } from '../constant/api'
 
 export const quanLyNguoiDungServices = {
   registerUser : (payload) =>{
@@ -8,6 +8,6 @@ export const quanLyNguoiDungServices = {
     return http.post('QuanLyNguoiDung/DangNhap',payload)
   },
   getInforUser : () =>{
-    return http.post('QuanLyNguoiDung/ThongTinTaiKhoan')
+    return httpAuthor.post('QuanLyNguoiDung/ThongTinTaiKhoan')
   }
 }

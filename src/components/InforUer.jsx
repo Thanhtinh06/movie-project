@@ -12,7 +12,7 @@ const InforUer = () => {
           <FormInput
             propsInput={{
               isDisable: true,
-              value: user.taiKhoan,
+              value: user?.taiKhoan,
               nameTag: "User Name",
               nameInput: "taiKhoan",
               type: "text",
@@ -45,7 +45,7 @@ const InforUer = () => {
           <FormInput
             propsInput={{
               isDisable: false,
-              value: user.hoTen,
+              value: user?.hoTen,
               nameTag: "Full Name",
               nameInput: "hoTen",
               type: "text",
@@ -57,7 +57,7 @@ const InforUer = () => {
           <FormInput
             propsInput={{
               isDisable: true,
-              value: user.email,
+              value: user?.email,
               nameTag: "Email",
               nameInput: "email",
               type: "email",
@@ -73,7 +73,7 @@ const InforUer = () => {
           <FormInput
             propsInput={{
               isDisable: false,
-              value: user.soDT,
+              value: user?.soDT,
               nameTag: "Phone",
               nameInput: "soDt",
               type: "text",
@@ -97,7 +97,7 @@ const InforUer = () => {
           <FormInput
             propsInput={{
               isDisable: true,
-              value: user.maNhom,
+              value: user?.maNhom,
               nameTag: "Code Group",
               nameInput: "maNhom",
               type: "text",

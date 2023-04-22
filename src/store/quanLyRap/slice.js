@@ -2188,6 +2188,7 @@ export const {
     builder
       .addCase(getTheaterList.fulfilled, (state, action) => {
         state.theateList = action.payload;
+        console.log(state.theateList)
       })
       .addCase(getTheaterGroup.fulfilled, (state, action) => {
         if (action.payload) {
