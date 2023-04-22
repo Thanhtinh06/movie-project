@@ -6,7 +6,6 @@ export const getTheaterList = createAsyncThunk(
   async (payload, { rejectWithValue }) => {
     try {
       const res = await quanLyRapServices.getTheaterList(payload);
-      console.log(res.data.content)
       return res.data.content;
     } catch (error) {
       rejectWithValue(error);

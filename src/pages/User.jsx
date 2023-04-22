@@ -7,10 +7,11 @@ import {
   TabPanel,
 } from "@material-tailwind/react";
 import { Square3Stack3DIcon, UserCircleIcon } from "@heroicons/react/24/solid";
-import InforUer from "../components/InforUer";
+// import InforUer from "../components/InforUer";
 import HistoryBook from "../components/HistoryBook";
 import { useDispatch, useSelector } from "react-redux";
 import { getInforUser } from "../store/quanLyNguoiDung/thunkActions";
+import UserInfor from "../components/UserInfor";
 
 const User = () => {
   const data = [
@@ -18,7 +19,7 @@ const User = () => {
       label: "Profile",
       value: "profile",
       icon: UserCircleIcon,
-      desc: <InforUer />,
+      desc: <UserInfor />,
     },
     {
       label: "History",

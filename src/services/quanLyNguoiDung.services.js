@@ -9,5 +9,8 @@ export const quanLyNguoiDungServices = {
   },
   getInforUser : () =>{
     return httpAuthor.post('QuanLyNguoiDung/ThongTinTaiKhoan')
+  },
+  updateUser : (payload) =>{
+    return httpAuthor.put('QuanLyNguoiDung/CapNhatThongTinNguoiDung',payload)
   }
 }

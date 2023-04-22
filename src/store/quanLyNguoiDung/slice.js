@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getInforUser, loginUser } from "./thunkActions";
+import { getInforUser, loginUser, updateUser } from "./thunkActions";
 
 const initialState = {
   user: undefined,
@@ -37,6 +37,9 @@ export const {
       })
       .addCase(getInforUser.fulfilled, (state, action) => {
         state.inforAccount = action.payload;
-      });
+      })
+      .addCase(updateUser.fulfilled,(state,action)=>{
+        state.user = action.payload
+      })
   },
 });
