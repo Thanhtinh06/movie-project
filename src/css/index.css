@@ -68,7 +68,7 @@ footer .footer-content .text-footer {
 }
 
 .theater {
-  @apply w-[80%] m-auto py-12 bg-white rounded-lg;
+  @apply w-[80%] m-auto py-12 bg-white rounded-lg mb-[100px];
 }
 .theater .theater-content {
   @apply grid grid-cols-9 border-solid border-[1px] border-neutral-300 py-10 w-[90%] m-auto;

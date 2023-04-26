@@ -4,12 +4,14 @@ import {
 } from "../store/quanLyDatVe/thunkActions";
 import { message } from "antd";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const FormBuyTicket = () => {
   const { inforMoive,reRender,chooseSeat } = useSelector((state) => state.quanLyDatVe);
   const { user } = useSelector((state) => state.quanLyNguoiDung);
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const getTotal = () => {
     if(chooseSeat){
@@ -94,10 +96,7 @@ const FormBuyTicket = () => {
               })}
             </td>
           </tr>
-          {/* <tr className="row-table">
-            <th scope="row">Promotions</th>
-            <td className="px-6 py-4 text-right">0</td>
-          </tr> */}
+
           <tr className="row-table">
             <th scope="row">Total</th>
             <td className="px-6 py-4 text-right">
@@ -108,9 +107,10 @@ const FormBuyTicket = () => {
             <th scope="row" colSpan="2" className="text-center">
               <button className="btn-booking" onClick={()=>{
                  let value = getListVe();
-                 console.log('value getlistVe : ',value)
                  if(value){
                   dispatch(bookTicket(value));
+                  navigate('/user')
+                  
                  }else{
                   message.warning('Please choose seats')
                  }

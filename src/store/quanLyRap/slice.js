@@ -2194,7 +2194,6 @@ export const {
           state.theateGroup = action.payload.lstCumRap;
           state.movieSchedule = action.payload.lstCumRap[0]
         }
-      })
-      
+      })   
   },
 });

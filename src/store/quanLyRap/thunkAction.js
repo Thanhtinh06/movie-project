@@ -19,7 +19,7 @@ export const getTheaterGroup = createAsyncThunk(
       const { id } = payload;
       const query = `maHeThongRap=${id}&maNhom=GP07`;
       const res = await quanLyRapServices.getTheaterGroup(query);
-      console.log(res.data.content)
+      console.log(res.data.content[0])
       return res.data.content[0];
     } catch (error) {
       rejectWithValue(error);

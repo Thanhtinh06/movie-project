@@ -37,6 +37,7 @@ export const { reducer: quanLyDatVeReducer, actions: quanLyDatVeActions } =
           state.dataSeat = action.payload;
           state.listSeat = action.payload.danhSachGhe;
           state.inforMoive = action.payload.thongTinPhim;
+
         })
         .addCase(bookTicket.fulfilled, (state, action) => {
           state.chooseSeat = [];
@@ -45,4 +46,3 @@ export const { reducer: quanLyDatVeReducer, actions: quanLyDatVeActions } =
         });
     },
   });
-

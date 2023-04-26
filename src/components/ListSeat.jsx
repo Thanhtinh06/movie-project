@@ -12,7 +12,7 @@ import _ from 'lodash';
 const ListSeat = () => {
   const dispatch = useDispatch();
   const params = useParams();
-  const { listSeat, inforMoive, reRender } = useSelector(
+  const { listSeat, inforMoive, reRender,isLoading } = useSelector(
     (state) => state.quanLyDatVe
   );
   const {user} = useSelector(state => state.quanLyNguoiDung)

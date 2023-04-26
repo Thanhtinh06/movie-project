@@ -4,6 +4,7 @@ import { getMovieList} from './thunkAction';
 const initialState = {
   movieList : [],
   updateList : [],
+  isLoading : false,
 }
 
 export const { 
@@ -19,11 +20,13 @@ export const {
   },
   extraReducers : (builder) => {
     builder
-      .addCase(
-        getMovieList.fulfilled,(state,action) => {
-          state.movieList = action.payload
-          state.updateList = action.payload
-        }
-      )
+    .addCase(getMovieList.pending, (state) => {
+      state.isLoading = true;
+    })
+    .addCase(getMovieList.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.movieList = action.payload;
+      state.updateList = action.payload;
+    });
   }
 })

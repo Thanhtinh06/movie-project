@@ -9,7 +9,7 @@ const Theater = () => {
     <div className="theater">
       <div className="theater-content">
         <div className="theater-logo">
-          <TheateLogo valueClass={"flex flex-col gap-4 items-center border-r-[1px] border-r-slate-100"} valueWidth={"w-[50px]"} />
+          <TheateLogo valueClass={"flex flex-col gap-4 items-center border-r-[1px] border-r-slate-100"} valueWidth={"w-[70px] p-3 shadow-lg rounded-lg"} />
         </div>
         <div className="theater-group">
           <TheaterGroup />

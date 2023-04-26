@@ -23,10 +23,10 @@ const Router = ()=>{
         path : '/movieDetail/:movieId',
         element : <MovieDetail />
       },
-      {
-        path : "/contact",
-        element : <Contact />
-      },
+      // {
+      //   path : "/contact",
+      //   element : <Contact />
+      // },
       {
         path : "/news",
         element : <News />

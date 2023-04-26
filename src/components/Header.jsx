@@ -21,10 +21,10 @@ const Header = () => {
           {" "}
           News{" "}
         </NavLink>
-        <NavLink className="navlink-primary" to="/contact">
+        {/* <NavLink className="navlink-primary" to="/contact">
           {" "}
           Contact{" "}
-        </NavLink>
+        </NavLink> */}
       </div>
 
       {!!!user && (

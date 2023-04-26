@@ -36,7 +36,7 @@ const User = () => {
   },[dispatch,user,reRender])
   return (
     <div className="m-[160px] w-[60%] mx-auto p-6 bg-zinc-900 rounded-lg">
-      <Tabs value="profile">
+      <Tabs value="history">
         <TabsHeader>
           {data.map(({ label, value, icon }) => (
             <Tab key={value} value={value}>
