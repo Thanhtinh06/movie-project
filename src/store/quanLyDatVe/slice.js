@@ -7,7 +7,8 @@ const initialState = {
   inforMoive: undefined,
   chooseSeat: [],
   listTicket: undefined,
-  reRender : false,
+  reRender: false,
+  chooseSeatOrtherPeople: [],
 };
 
 export const { reducer: quanLyDatVeReducer, actions: quanLyDatVeActions } =
@@ -25,6 +26,10 @@ export const { reducer: quanLyDatVeReducer, actions: quanLyDatVeActions } =
           state.chooseSeat.push(action.payload);
         }
       },
+
+      updatechooseSeatOrtherPeople: (state, action) => {
+        state.chooseSeatOrtherPeople = action.payload;
+      },
     },
     extraReducers: (builder) => {
       builder
@@ -36,7 +41,8 @@ export const { reducer: quanLyDatVeReducer, actions: quanLyDatVeActions } =
         .addCase(bookTicket.fulfilled, (state, action) => {
           state.chooseSeat = [];
           state.listTicket = action.payload;
-          state.reRender = !state.reRender
+          state.reRender = !state.reRender;
         });
     },
   });
+

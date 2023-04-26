@@ -10,7 +10,6 @@ const FormBuyTicket = () => {
   const { inforMoive,reRender,chooseSeat } = useSelector((state) => state.quanLyDatVe);
   const { user } = useSelector((state) => state.quanLyNguoiDung);
   const dispatch = useDispatch();
-  console.log(chooseSeat);
 
   const getTotal = () => {
     if(chooseSeat){

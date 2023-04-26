@@ -23,6 +23,7 @@
       &.redBox {
         &::before {
           background-color: red;
+          cursor: no-drop;
         }
       }
       &.whiteBox {
@@ -35,6 +36,14 @@
         &::before {
           background-color: $color-vip;
           border: 1.5px solid $color-vip;
+        }
+      }
+      
+      &.ortherChoose {
+        &::before {
+          background-color: black;
+          border: 1.5px solid $color-vip;
+          cursor: no-drop;
         }
       }
     }

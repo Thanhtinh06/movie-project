@@ -103,9 +103,15 @@ footer .footer-content .text-footer {
 }
 .seat.reserved {
   background-color: red;
+  cursor: no-drop;
 }
 .seat.reserved:hover {
   background-color: red;
+}
+.seat.ortherChoose {
+  background-color: black;
+  border: 1.5px solid rgba(208, 136, 3, 0.793);
+  cursor: no-drop;
 }
 .seat.vip {
   background-color: rgba(208, 136, 3, 0.793);
@@ -116,8 +122,10 @@ footer .footer-content .text-footer {
 .seat.vip.reserved {
   background-color: red;
 }
-.seat.vip.reserved:hover {
-  background-color: red;
+.seat.vip.ortherChoose {
+  background-color: black;
+  border: 1.5px solid rgba(208, 136, 3, 0.793);
+  cursor: no-drop;
 }
 .seat:hover {
   background-color: green;
@@ -146,6 +154,7 @@ footer .footer-content .text-footer {
 }
 .list-seat .intro li.redBox::before {
   background-color: red;
+  cursor: no-drop;
 }
 .list-seat .intro li.whiteBox::before {
   background-color: white;
@@ -154,6 +163,11 @@ footer .footer-content .text-footer {
 .list-seat .intro li.vipBox::before {
   background-color: rgba(208, 136, 3, 0.793);
   border: 1.5px solid rgba(208, 136, 3, 0.793);
+}
+.list-seat .intro li.ortherChoose::before {
+  background-color: black;
+  border: 1.5px solid rgba(208, 136, 3, 0.793);
+  cursor: no-drop;
 }
 .list-seat .choose-seat {
   color: white;

@@ -12,14 +12,20 @@
   &:focus {
     background-color: white;
   }
-  &.checked{
+  &.checked {
     background-color: green;
   }
   &.reserved {
     background-color: red;
-    &:hover{
+    cursor: no-drop;
+    &:hover {
       background-color: red;
     }
+  }
+  &.ortherChoose {
+    background-color: black;
+    border: 1.5px solid $color-vip;
+    cursor: no-drop;
   }
   &.vip {
     background-color: $color-vip;
@@ -28,12 +34,14 @@
     }
     &.reserved {
       background-color: red;
-      &:hover{
-        background-color: red;
-      }
+    }
+    &.ortherChoose {
+      background-color: black;
+      border: 1.5px solid $color-vip;
+      cursor: no-drop;
     }
   }
-  &:hover{
+  &:hover {
     background-color: green;
   }
 }
