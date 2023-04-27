@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { quanLyNguoiDungServices } from "../services/quanLyNguoiDung.services";
 import { message } from "antd";
 
 const Register = () => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
+
+
   const navigate = useNavigate();
   const {
     register,

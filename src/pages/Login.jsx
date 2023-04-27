@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -15,6 +15,9 @@ const Login = () => {
   });
   const dispatch = useDispatch()
   const {user} = useSelector(state => state.quanLyNguoiDung)
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
 
   if(user){
     return <Navigate to='/' />
