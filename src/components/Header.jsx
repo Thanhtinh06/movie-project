@@ -8,7 +8,7 @@ const Header = () => {
   const { user } = useSelector((state) => state.quanLyNguoiDung);
   const dispatch = useDispatch()
   return (
-    <header>
+    <header className="z-10">
       <div className="logo">
         <img src="../logo2.jpeg" alt="logo" />
       </div>

@@ -1,15 +1,9 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getTheaterGroup } from "../store/quanLyRap/thunkAction";
 import { quanLyRapActions } from "../store/quanLyRap/slice";
 
 const TheaterGroup = () => {
   const dispatch = useDispatch();
   const { theateGroup } = useSelector((state) => state.quanLyRap);
-  useEffect(() => {
-    dispatch(getTheaterGroup());
-
-  }, [dispatch]);
 
   return (
     <div className="flex flex-col gap-6 h-[500px] overflow-auto">

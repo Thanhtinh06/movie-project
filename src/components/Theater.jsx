@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TheateLogo from "../module/TheateLogo";
 import TheaterGroup from "./TheaterGroup";
 import MovieSchedule from "./MovieSchedule";
+import { useDispatch } from "react-redux";
+import { getTheaterGroup } from "../store/quanLyRap/thunkAction";
 
 
 const Theater = () => {
+
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(getTheaterGroup({id : "BHDStar"}));
+  },[dispatch])
+  
   return (
     <div className="theater">
       <div className="theater-content">

@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getMovieList} from './thunkAction';
+import { getBanner, getMovieList} from './thunkAction';
 
 const initialState = {
   movieList : [],
   updateList : [],
+  banner : [],
   isLoading : false,
 }
 
@@ -27,6 +28,9 @@ export const {
       state.isLoading = false;
       state.movieList = action.payload;
       state.updateList = action.payload;
-    });
+    })
+    .addCase(getBanner.fulfilled, (state,action)=>{
+      state.banner = action.payload
+    })
   }
 })

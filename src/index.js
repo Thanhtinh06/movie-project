@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./store/index";
 import { StyleProvider } from "@ant-design/cssinjs";
+import 'antd/dist/reset.css';
+
 
 //cấu hình realtime (Websocket với singalr)
 import * as signalR from '@aspnet/signalr';

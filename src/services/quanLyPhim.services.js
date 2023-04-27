@@ -6,5 +6,8 @@ export const quanLyPhimServices = {
   },
   getMovieById : (id) => {
     return http.get(`QuanLyPhim/LayThongTinPhim?MaPhim=${id}`)
+  },
+  getBanner : () =>{
+    return http.get(`QuanLyPhim/LayDanhSachBanner`)
   }
 } 

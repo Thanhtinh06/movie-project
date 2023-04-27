@@ -1,12 +1,12 @@
 import React from 'react'
-import Carousel from '../components/Carousel'
 import MovieList from '../module/MovieList'
 import Theater from '../components/Theater'
+import CarouselHome from '../components/CarouselHome'
 
 const Home = () => {
   return (
     <div>
-      <Carousel />
+      <CarouselHome />
       <MovieList />
       <Theater />
     </div>

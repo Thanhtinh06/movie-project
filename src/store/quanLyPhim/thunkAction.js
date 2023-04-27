@@ -12,3 +12,14 @@ export const getMovieList = createAsyncThunk(
     }
   }
 );
+
+export const getBanner = createAsyncThunk("quanLyPhim/getBanner",
+  async (payload, {rejectWithValue}) =>{
+    try {
+      const res = await quanLyPhimServices.getBanner()
+      return res.data.content
+    } catch (error) {
+      rejectWithValue(error)
+    }
+  }
+)

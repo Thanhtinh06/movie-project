@@ -12,6 +12,7 @@ import HistoryBook from "../components/HistoryBook";
 import { useDispatch, useSelector } from "react-redux";
 import { getInforUser } from "../store/quanLyNguoiDung/thunkActions";
 import UserInfor from "../components/UserInfor";
+import { useNavigate } from "react-router-dom";
 
 const User = () => {
   const data = [
@@ -34,6 +35,10 @@ const User = () => {
   useEffect(()=>{
     dispatch(getInforUser())
   },[dispatch,user,reRender])
+  const navigate = useNavigate();
+  if(!user){
+    navigate('/login')
+  }
   return (
     <div className="m-[160px] w-[60%] mx-auto p-6 bg-zinc-900 rounded-lg">
       <Tabs value="history">
